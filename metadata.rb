@@ -1,6 +1,6 @@
 name 'hello'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Takaaki Furukawa'
+maintainer_email 'takaaki.frkw@gmail.com'
 license 'all_rights'
 description 'Installs/Configures hello'
 long_description 'Installs/Configures hello'

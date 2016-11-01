@@ -20,7 +20,4 @@ suites:
   - name: default
     run_list:
       - recipe[hello::default]
-    verifier:
-      inspec_tests:
-        - test/recipes
     attributes:
