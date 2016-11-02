@@ -14,6 +14,11 @@ platforms:
   - name: centos-7.2
 
 suites:
+  - name: with-serverspec
+    run_list:
+      - recipe[hello::default]
+    attributes:
+
   - name: with-inspec
     run_list:
       - recipe[hello::default]
@@ -21,7 +26,10 @@ suites:
     verifier:
       name: inspec
 
-  - name: with-serverspec
+  - name: with-shell
     run_list:
       - recipe[hello::default]
     attributes:
+    verifier:
+      name: shell
+      command: chef exec rspec -c -f documentation -I test/integration/${KITCHEN_SUITE}/serverspec --pattern test/integration/${KITCHEN_SUITE}/serverspec/**/*_spec.rb --pattern test/integration/helpers/serverspec/spec_helper.rb
